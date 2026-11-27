@@ -1,27 +1,27 @@
-# OrangeFox Recovery Project
+# Lineage OS Android 15
 
 ### How to build ###
 
 ```bash
 # Create dirs
-$ mkdir ofox ; cd ofox
+$ mkdir LineageOS22 && cd LineageOS22
 
 # Init repo
-$ repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+$ repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs
+(we have legacy patches)
 
-# Clone a3y17lte repo
-$ git clone https://gitlab.com/OrangeFox/device/j7velte.git -b fox_9.0 device/samsung/j7velte
+# Clone my local repo
+$ git clone https://github.com/samsungexynos7870/android_manifest_samsung_j7velte.git -b lineage-22.2 .repo/local_manifests
 
 # Sync
-$ repo sync --no-repo-verify -c --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j`nproc`
+$ repo sync --force-sync --no-clone-bundle --no-tags -v
 
 # Build
-$ mv device/samsung/j7velte/build_ofox.sh .
-$ . build_ofox.sh j7velte
+$ . build/envsetup.sh && brunch lineage_j7velte-user
 ```
 
 ## Credits
-2019 @Astrako
+2021 @Astrako 2022 @FlominatorGD
 
 ## Contact
-Telegram support group: https://t.me/joinchat/D1Jk_VbieGBXOWZt2y8O7A
+Telegram support group: <s>https://t.me/joinchat/D1Jk_VbieGBXOWZt2y8O7A</s> DEPRECATED
